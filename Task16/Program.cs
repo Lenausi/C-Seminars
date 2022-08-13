@@ -6,31 +6,20 @@
 // 25, 5 -> да
 // 8,9 -> нет
 
+
 Console.Write("Введите первое число: ");;
 int num1= Convert.ToInt32(Console.ReadLine ( ));
 Console.Write("Введите второе число: ");;
 int num2= Convert.ToInt32(Console.ReadLine ( ));
 
-int res1 = num1/num2;
-int res2=num2/num1;
-if (res1==num2)
-{ 
-    Console.Write("да");
-}
-    
- else
-if (res2==num1)
+bool CheckingQuad (int a, int b)
+
 {
- Console.Write("да");
+return (a%b==0 || b%a==0);
+
 }
 
-else
-{
-Console.Write("нет"); 
-}
-
-
-
-
+bool result = CheckingQuad(num1,num2);
+Console.Write(result? "да" : "нет");
 
 
