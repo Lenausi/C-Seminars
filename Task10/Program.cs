@@ -1,33 +1,19 @@
-﻿// 1. Напишите программу, которая выводит случайное
-// трёхзначное число и удаляет вторую цифру этого
-// числа.
-// 456 -> 46
-// 782 -> 72
-// 918 -> 98
+﻿// 1. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
+
+Console.Write("Введите трехзначное число: ");
+int num1= Convert.ToInt32(Console.ReadLine ( ));
 
 
-//  Решение №1:
-// int number = new Random().Next(100, 1000);
-// Console.WriteLine($"Случайное трехзначное число => {number}");
-// int firstDigit = number/100;
-// int ThirdDigit = number%10 ;
-
-// int result = firstDigit*10+ThirdDigit;
-// System.Console.WriteLine($"После удаления второй цифры получается число -> {result}");
-
-
-// Решение №2
-int number = new Random().Next(100, 1000);
-Console.WriteLine($"Случайное трехзначное число => {number}");
-
-
-int NewDig(int num)
+int NewDig(int a)
 {
-int firstDigit = num/100;
-int ThirdDigit = num%10 ;
-int result  = firstDigit*10+ThirdDigit;
-return result;
+    if (a>=100 && a<1000) return a%100/10;
+return -1;
 }
 
-int result = NewDig (number);
-Console.WriteLine($"Случайное трехзначное число => {result}");
+int result = NewDig (num1);
+string solution = result != -1 ? result.ToString($"Вторая цифра числа {num1} равна {result}") : "Введено некорректное число, пожалуйста, повторите ввод";
+Console.WriteLine($"{solution}");
