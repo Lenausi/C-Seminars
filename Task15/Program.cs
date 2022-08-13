@@ -9,8 +9,12 @@ int num1= Convert.ToInt32(Console.ReadLine ( ));
 
  bool DayChecking(int a)
  {
-    return (a==6 || a==7);
+     return (a==6 || a==7);
+     
  }
 
 bool result = DayChecking(num1);
 Console.Write(result? "да" : "нет");
+
+
+
